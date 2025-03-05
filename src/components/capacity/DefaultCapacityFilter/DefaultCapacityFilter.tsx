@@ -467,7 +467,25 @@ const DefaultCapacityFilter: React.FC<DefaultCapacityFilterProps> = ({
                         >
                             State
                         </InputLabel>
-                        <Select value={defaultCapacityFilterState.selectedState} onChange={handleStateChange} label="State">
+                        <Select
+                            value={defaultCapacityFilterState.selectedState}
+                            onChange={handleStateChange}
+                            label="State"
+                            MenuProps={{
+                                PaperProps: {
+                                    sx: {
+                                        maxHeight: 200,
+                                        '&::-webkit-scrollbar': {
+                                            width: '10px',
+                                        },
+                                        '&::-webkit-scrollbar-thumb': {
+                                            backgroundColor: '#b5b5ba',
+                                            borderRadius: '16px',
+                                        },
+                                    },
+                                },
+                            }}
+                        >
                             {locationsState.states.map((state) => (
                                 <MenuItem key={state.state} value={state.state}>
                                     {state.state}
@@ -487,7 +505,25 @@ const DefaultCapacityFilter: React.FC<DefaultCapacityFilterProps> = ({
                         >
                             Market
                         </InputLabel>
-                        <Select value={defaultCapacityFilterState.selectedMarket} onChange={handleMarketChange} label="Market">
+                        <Select
+                            value={defaultCapacityFilterState.selectedMarket}
+                            onChange={handleMarketChange}
+                            label="Market"
+                            MenuProps={{
+                                PaperProps: {
+                                    sx: {
+                                        maxHeight: 200,
+                                        '&::-webkit-scrollbar': {
+                                            width: '10px',
+                                        },
+                                        '&::-webkit-scrollbar-thumb': {
+                                            backgroundColor: '#b5b5ba',
+                                            borderRadius: '16px',
+                                        },
+                                    },
+                                },
+                            }}
+                        >
                             {marketsForSelectedState.map((market) => (
                                 <MenuItem key={market.market} value={market.market}>
                                     {market.market}
@@ -507,7 +543,25 @@ const DefaultCapacityFilter: React.FC<DefaultCapacityFilterProps> = ({
                         >
                             Service Territory
                         </InputLabel>
-                        <Select value={defaultCapacityFilterState.selectedTerritory} onChange={handleTerritoryChange} label="Service Territory">
+                        <Select
+                            value={defaultCapacityFilterState.selectedTerritory}
+                            onChange={handleTerritoryChange}
+                            label="Service Territory"
+                            MenuProps={{
+                                PaperProps: {
+                                    sx: {
+                                        maxHeight: 200,
+                                        '&::-webkit-scrollbar': {
+                                            width: '10px',
+                                        },
+                                        '&::-webkit-scrollbar-thumb': {
+                                            backgroundColor: '#b5b5ba',
+                                            borderRadius: '16px',
+                                        },
+                                    },
+                                },
+                            }}
+                        >
                             {territoriesForSelectedMarket.map((territory) => (
                                 <MenuItem key={territory.territory} value={territory.territory}>
                                     {territory.territory}
@@ -535,6 +589,20 @@ const DefaultCapacityFilter: React.FC<DefaultCapacityFilterProps> = ({
                                 value={defaultCapacityFilterState.selectedCalendarization}
                                 onChange={handleCalendarizationChange}
                                 label="Calendarization"
+                                MenuProps={{
+                                    PaperProps: {
+                                        sx: {
+                                            maxHeight: 200,
+                                            '&::-webkit-scrollbar': {
+                                                width: '10px',
+                                            },
+                                            '&::-webkit-scrollbar-thumb': {
+                                                backgroundColor: '#b5b5ba',
+                                                borderRadius: '16px',
+                                            },
+                                        },
+                                    },
+                                }}
                             >
                                 <MenuItem value='defaultView'>
                                     Default View
