@@ -3,11 +3,9 @@ import { Locations } from "../components/capacity/DefaultCapacityFilter/DefaultC
 export const locationsData: Locations = {
     locations: [
         {
-            id: 1,
             state: "California",
             markets: [
                 {
-                    id: 101,
                     market: "Los Angeles",
                     serviceTerritories: [
                         {
@@ -21,7 +19,6 @@ export const locationsData: Locations = {
                     ],
                 },
                 {
-                    id: 102,
                     market: "San Francisco",
                     serviceTerritories: [
                         {
@@ -37,11 +34,9 @@ export const locationsData: Locations = {
             ],
         },
         {
-            id: 2,
             state: "Texas",
             markets: [
                 {
-                    id: 201,
                     market: "Dallas",
                     serviceTerritories: [
                         {
@@ -55,7 +50,6 @@ export const locationsData: Locations = {
                     ],
                 },
                 {
-                    id: 202,
                     market: "Houston",
                     serviceTerritories: [
                         {
@@ -71,11 +65,9 @@ export const locationsData: Locations = {
             ],
         },
         {
-            id: 3,
             state: "New York",
             markets: [
                 {
-                    id: 301,
                     market: "New York City",
                     serviceTerritories: [
                         {
@@ -89,7 +81,6 @@ export const locationsData: Locations = {
                     ],
                 },
                 {
-                    id: 302,
                     market: "Buffalo",
                     serviceTerritories: [
                         {
@@ -105,11 +96,9 @@ export const locationsData: Locations = {
             ],
         },
         {
-            id: 4,
             state: "Florida",
             markets: [
                 {
-                    id: 401,
                     market: "Miami",
                     serviceTerritories: [
                         {
@@ -123,7 +112,6 @@ export const locationsData: Locations = {
                     ],
                 },
                 {
-                    id: 402,
                     market: "Orlando",
                     serviceTerritories: [
                         {
@@ -139,11 +127,9 @@ export const locationsData: Locations = {
             ],
         },
         {
-            id: 5,
             state: "Illinois",
             markets: [
                 {
-                    id: 501,
                     market: "Chicago",
                     serviceTerritories: [
                         {
@@ -157,7 +143,6 @@ export const locationsData: Locations = {
                     ],
                 },
                 {
-                    id: 502,
                     market: "Springfield",
                     serviceTerritories: [
                         {
@@ -173,11 +158,9 @@ export const locationsData: Locations = {
             ],
         },
         {
-            id: 6,
             state: "Washington",
             markets: [
                 {
-                    id: 601,
                     market: "Seattle",
                     serviceTerritories: [
                         {
@@ -191,7 +174,6 @@ export const locationsData: Locations = {
                     ],
                 },
                 {
-                    id: 602,
                     market: "Spokane",
                     serviceTerritories: [
                         {
@@ -207,11 +189,9 @@ export const locationsData: Locations = {
             ],
         },
         {
-            id: 7,
             state: "Georgia",
             markets: [
                 {
-                    id: 701,
                     market: "Atlanta",
                     serviceTerritories: [
                         {
@@ -225,7 +205,6 @@ export const locationsData: Locations = {
                     ],
                 },
                 {
-                    id: 702,
                     market: "Savannah",
                     serviceTerritories: [
                         {
@@ -241,11 +220,9 @@ export const locationsData: Locations = {
             ],
         },
         {
-            id: 8,
             state: "Colorado",
             markets: [
                 {
-                    id: 801,
                     market: "Denver",
                     serviceTerritories: [
                         {
@@ -259,7 +236,6 @@ export const locationsData: Locations = {
                     ],
                 },
                 {
-                    id: 802,
                     market: "Boulder",
                     serviceTerritories: [
                         {
@@ -275,11 +251,9 @@ export const locationsData: Locations = {
             ],
         },
         {
-            id: 9,
             state: "Arizona",
             markets: [
                 {
-                    id: 901,
                     market: "Phoenix",
                     serviceTerritories: [
                         {
@@ -293,7 +267,6 @@ export const locationsData: Locations = {
                     ],
                 },
                 {
-                    id: 902,
                     market: "Tucson",
                     serviceTerritories: [
                         {

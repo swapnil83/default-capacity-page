@@ -9,6 +9,8 @@ import {
     SelectChangeEvent,
     Typography,
     Modal,
+    Tooltip,
+    IconButton,
 } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -18,6 +20,7 @@ import { CalendarizationState, LocationsState, LocationsApiResponseData, Calenda
 import { locationsData } from "../../../data/locations";
 import { calendarizationData } from "../../../data/calendarization";
 import { getDateRange, formatDateToMMDDYYYY } from "../../../utility/dateUtility";
+import SearchIcon from '@mui/icons-material/Search';
 // import { DefaultCapacityTableState } from "../DefaultCapacityTable/DefaultCapacityTable.types";
 
 type DefaultCapacityFilterProps = {
@@ -313,20 +316,20 @@ const DefaultCapacityFilter: React.FC<DefaultCapacityFilterProps> = ({
         }
     };
 
-    const handleClear = () => {
-        updateDefaultCapacityFilterState({
-            selectedState: "",
-            selectedMarket: "",
-            selectedTerritory: "",
-            selectedCalendarization: "defaultView",
-            startDate: null,
-            endDate: null,
-        });
-        setErrors({});
-        setDateFieldsVisibility(false);
-        setCalendarizationFieldVisibility(false);
-        setShowDefaultCapacityTable(false);
-    };
+    // const handleClear = () => {
+    //     updateDefaultCapacityFilterState({
+    //         selectedState: "",
+    //         selectedMarket: "",
+    //         selectedTerritory: "",
+    //         selectedCalendarization: "defaultView",
+    //         startDate: null,
+    //         endDate: null,
+    //     });
+    //     setErrors({});
+    //     setDateFieldsVisibility(false);
+    //     setCalendarizationFieldVisibility(false);
+    //     setShowDefaultCapacityTable(false);
+    // };
 
     const validateForm = () => {
         let newErrors: { [key: string]: string } = {};
@@ -426,13 +429,13 @@ const DefaultCapacityFilter: React.FC<DefaultCapacityFilterProps> = ({
         : undefined;
 
     // Determine if the Clear button should be disabled
-    const isClearDisabled =
-        !defaultCapacityFilterState.selectedState &&
-        !defaultCapacityFilterState.selectedMarket &&
-        !defaultCapacityFilterState.selectedTerritory &&
-        defaultCapacityFilterState.selectedCalendarization === "defaultView" &&
-        !defaultCapacityFilterState.startDate &&
-        !defaultCapacityFilterState.endDate;
+    // const isClearDisabled =
+    //     !defaultCapacityFilterState.selectedState &&
+    //     !defaultCapacityFilterState.selectedMarket &&
+    //     !defaultCapacityFilterState.selectedTerritory &&
+    //     defaultCapacityFilterState.selectedCalendarization === "defaultView" &&
+    //     !defaultCapacityFilterState.startDate &&
+    //     !defaultCapacityFilterState.endDate;
 
     return (
         <>
@@ -570,6 +573,34 @@ const DefaultCapacityFilter: React.FC<DefaultCapacityFilterProps> = ({
                         </Select>
                         {renderError('territory')}
                     </FormControl>
+
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            height: 'calc(100% - 16px)',
+                        }}
+                    >
+                        <Tooltip title='Search'>
+                            <IconButton
+                                onClick={handleSearch}
+                                sx={{
+                                    color: '#FFB800',
+                                    '&:hover': {
+                                        backgroundColor: '#FFE480',
+                                        borderRadius: '50%',
+                                    },
+                                    padding: '8px',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <SearchIcon style={{ fontSize: '32px' }} />
+                            </IconButton>
+                        </Tooltip>
+                    </Box>
                 </Box>
 
                 {/* Second Row: Calendarization, Start Date, End Date */}
@@ -681,39 +712,6 @@ const DefaultCapacityFilter: React.FC<DefaultCapacityFilterProps> = ({
                         )}
                     </Box>
                 )}
-
-                <Box sx={{ display: "flex", gap: 2 }}>
-                    <Button
-                        variant="contained"
-                        onClick={handleSearch}
-                        sx={{
-                            backgroundColor: '#ffcc00',
-                            color: '#000000',
-                            '&:hover': {
-                                backgroundColor: '#ffaa00'
-                            },
-                            fontWeight: 'bold',
-                        }}
-                    >
-                        View
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        onClick={handleClear}
-                        disabled={isClearDisabled}
-                        sx={{
-                            borderColor: '#ffcc00',
-                            color: '#ffcc00',
-                            '&:hover': {
-                                borderColor: '#ffaa00',
-                                color: '#ffaa00',
-                            },
-                            fontWeight: 'bold',
-                        }}
-                    >
-                        Clear
-                    </Button>
-                </Box>
 
                 {/* Conflict Modal */}
                 <Modal open={openConflictModal} onClose={handleCloseConflictModal}>

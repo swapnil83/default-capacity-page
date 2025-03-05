@@ -18,7 +18,7 @@ const DefaultCapacity: React.FC<DefaultCapacityProps> = () => {
         selectedState: "",
         selectedMarket: "",
         selectedTerritory: "",
-        selectedCalendarization: "Default View",
+        selectedCalendarization: "",
         startDate: null,
         endDate: null
     });

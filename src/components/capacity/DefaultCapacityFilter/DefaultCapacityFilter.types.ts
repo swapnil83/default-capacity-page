@@ -4,13 +4,11 @@ export interface ServiceTerritory {
 };
 
 export interface Market {
-    id: number;
     market: string;
     serviceTerritories: ServiceTerritory[];
 };
 
 export interface State {
-    id: number;
     state: string;
     markets: Market[];
 };
